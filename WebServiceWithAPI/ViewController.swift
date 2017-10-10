@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController
 {
-    
     @IBOutlet weak var UsernameTxt: UITextField!
     @IBOutlet weak var PasswordTxt: UITextField!
     
@@ -24,6 +23,23 @@ class ViewController: UIViewController
     {
         let request = NSMutableURLRequest(url: NSURL(string: "")! as URL)
         request.httpMethod = "POST"
+        
+        /*
+        let dicParameters = ["key": "dsfhkjlkj","uname": "abc","pwd": "password"]
+        do
+        {
+            let jsonObject = try JSONSerialization.data(withJSONObject: dicParameters, options: [])
+            request.httpBody = jsonObject
+        }
+        catch
+        {
+            
+        }
+//        URL: http:.....
+//        TYPe : POST
+//        Content Type : application/json
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        */
         
         let postString = ""
         request.httpBody = postString.data(using: String.Encoding.utf8)
